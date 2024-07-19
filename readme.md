@@ -88,3 +88,10 @@ public class ServiceImpl {
 - [x] LocalFileStorePlugin 本地文件存储插件
 - [x] DefaultSecretProcessor 默认加密插件
 - [x] ApacheCommandExecPlugin 本地命令执行插件
+
+### 关于我
+A Java developer, dream to make code <span style="color:red;font-weight:bold;">simple</span>!<br>
+Also, try to learn and apply go language to programming!
+Contact me using the following <span style="color:red;font-weight:bold;">wechat: LeKu_yuan</span>!<br>
+
+<img src="./imgs/wechat.jpg" style="width: 200px;height:200px;border-radius: 55px;margin-top:20px;margin-left: 60px;display:flex;justify-content: center;align-items: center;">
