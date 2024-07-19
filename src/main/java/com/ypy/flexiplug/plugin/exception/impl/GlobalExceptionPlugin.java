@@ -5,8 +5,6 @@ import com.ypy.flexiplug.plugin.locale.impl.LocalePlugin;
 import com.ypy.flexiplug.utils.SpringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
