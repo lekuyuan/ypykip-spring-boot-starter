@@ -82,3 +82,9 @@ public class ServiceImpl {
 ```
 
 ### 插件列表
+- [x] SplitService -> ISplitPlugin
+- [x] GlobalExceptionPlugin 全局异常插件
+- [x] localePlugin 国际化插件
+- [x] LocalFileStorePlugin 本地文件存储插件
+- [x] DefaultSecretProcessor 默认加密插件
+- [x] ApacheCommandExecPlugin 本地命令执行插件
