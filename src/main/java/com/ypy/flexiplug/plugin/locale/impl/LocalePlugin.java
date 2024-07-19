@@ -23,7 +23,6 @@ public class LocalePlugin implements ILocalePlugin {
         MessageSource messageSource = null;
         try {
             messageSource = springUtils.getBean("InnerMessageSource");
-            System.out.println("messageSource:" + messageSource);
         } catch (BeansException e) {
             log.error("Not find a bean of type for LocalePlugin, so you must enable LocalePlugin!");
             throw new RuntimeException(e);

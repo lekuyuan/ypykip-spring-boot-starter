@@ -21,7 +21,7 @@ public class FlexPlugEnableAutoConfiguration {
     }
 
     @Bean("springUtils")
-    public SpringUtils springUtils() {
+    public static SpringUtils springUtils() {
         return new SpringUtils();
     }
 }
