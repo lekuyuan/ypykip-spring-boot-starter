@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.ypy.flexiplug.config.GBase8sEnableAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.ypy.flexiplug.config.FlexPlugEnableAutoConfiguration

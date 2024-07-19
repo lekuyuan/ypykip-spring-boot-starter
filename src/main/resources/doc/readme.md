@@ -1,15 +1,15 @@
 ## 使用说明
-1. 在启动类上配置@EnableGBase8s注解
-2. 并在@EnableGBase8s注解属性plugins设置需要的插件进去
+1. 在启动类上配置@EnableFlexPlug注解
+2. 并在@EnableFlexPlug注解属性plugins设置需要的插件进去
 
 > 可以配置多个不同的插件
 
 ```java
-import com.ypy.flexiplug.annotation.EnableGBase8s;
+import com.ypy.flexiplug.annotation.EnableFlexPlug;
 import com.ypy.flexiplug.plugin.split.impl.SplitService;
 
 @SpringBootApplication
-@EnableGBase8s(plugins = {SplitService.class})
+@EnableFlexPlug(plugins = {SplitService.class})
 public class TestApplication {
     public static void main(String[] args) {
         SpringApplication.run(TestApplication.class, args);

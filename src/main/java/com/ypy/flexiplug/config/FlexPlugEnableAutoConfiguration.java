@@ -3,7 +3,7 @@ package com.ypy.flexiplug.config;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class GBase8sEnableAutoConfiguration {
+public class FlexPlugEnableAutoConfiguration {
 
     // @Bean
     // @ConditionalOnProperty(name = "splitService.enabled", havingValue = "true", matchIfMissing = true)

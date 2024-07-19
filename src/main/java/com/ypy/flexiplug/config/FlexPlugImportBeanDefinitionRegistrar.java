@@ -1,16 +1,16 @@
 package com.ypy.flexiplug.config;
 
-import com.ypy.flexiplug.annotation.EnableGBase8s;
+import com.ypy.flexiplug.annotation.EnableFlexPlug;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
 
-public class GBase8sImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+public class FlexPlugImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
         AnnotationAttributes annotationAttributes = AnnotationAttributes.fromMap(
-                importingClassMetadata.getAnnotationAttributes(EnableGBase8s.class.getName())
+                importingClassMetadata.getAnnotationAttributes(EnableFlexPlug.class.getName())
         );
 
         // 在这里可以拿到所有注解的信息，可以根据不同注解的和注解的属性来返回不同的class,
