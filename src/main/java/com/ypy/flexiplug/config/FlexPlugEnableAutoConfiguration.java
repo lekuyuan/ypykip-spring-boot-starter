@@ -2,7 +2,7 @@ package com.ypy.flexiplug.config;
 
 import com.ypy.flexiplug.plugin.locale.impl.LocalePlugin;
 import com.ypy.flexiplug.utils.SpringUtils;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 public class FlexPlugEnableAutoConfiguration {
 
     @Bean("InnerMessageSource")
-    @ConditionalOnBean(LocalePlugin.class)
+    @ConditionalOnClass(LocalePlugin.class)
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("i18n/messages");
