@@ -5,6 +5,8 @@ import com.ypy.flexiplug.mark.Plugin;
 import com.ypy.flexiplug.plugin.command.local.impl.ApacheCommandExecPlugin;
 import com.ypy.flexiplug.plugin.exception.impl.GlobalExceptionPlugin;
 import com.ypy.flexiplug.plugin.fileStore.impl.LocalFileStorePlugin;
+import com.ypy.flexiplug.plugin.locale.impl.LocalePlugin;
+import com.ypy.flexiplug.plugin.secret.impl.DefaultSecretPlugin;
 import com.ypy.flexiplug.plugin.split.impl.SplitService;
 import org.springframework.context.annotation.Import;
 
@@ -25,5 +27,7 @@ public @interface EnableFlexPlug {
                     ApacheCommandExecPlugin.class,
                     LocalFileStorePlugin.class,
                     GlobalExceptionPlugin.class,
+                    LocalePlugin.class,
+                    DefaultSecretPlugin.class,
             };
 }
