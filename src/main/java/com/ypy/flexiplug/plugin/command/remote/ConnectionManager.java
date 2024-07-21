@@ -2,9 +2,9 @@ package com.ypy.flexiplug.plugin.command.remote;
 
 import com.ypy.flexiplug.plugin.command.remote.jsch.JschSftpConnectionWrapper;
 import com.ypy.flexiplug.plugin.command.remote.jsch.JschSshConnectionWrapper;
-import com.ypy.flexiplug.plugin.secret.SecretProcessor;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ypy.flexiplug.plugin.secret.ISecretPlugin;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
@@ -33,8 +33,8 @@ public class ConnectionManager {
 
     private final LinkedBlockingDeque<ConnectionWrapper> readyCloseConnection = new LinkedBlockingDeque<>(400);
 
-    @Autowired
-    private SecretProcessor secretProcessor;
+    @Resource
+    private ISecretPlugin secretProcessor;
 
     public final int connect(ConnectInfo connectInfo) {
         return this.connect(connectInfo, JschSshConnectionWrapper.class);

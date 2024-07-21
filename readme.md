@@ -88,6 +88,7 @@ public class ServiceImpl {
 - [x] LocalFileStorePlugin 本地文件存储插件
 - [x] DefaultSecretProcessor 默认加密插件
 - [x] ApacheCommandExecPlugin 本地命令执行插件
+- [x] DefaultSecretPlugin 默认对称加密插件
 
 ### 关于我
 A Java developer, dream to make code <span style="color:red;font-weight:bold;">simple</span>!<br>

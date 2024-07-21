@@ -1,25 +1,50 @@
 package com.ypy.flexiplug.plugin.secret.impl;
 
-import com.ypy.flexiplug.plugin.secret.SecretProcessor;
+import com.ypy.flexiplug.plugin.secret.ISecretPlugin;
+import com.ypy.flexiplug.utils.SpringUtils;
+import com.ypy.flexiplug.utils.StringUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.Security;
 
-public class DefaultSecretProcessor implements SecretProcessor {
-    @Value("${gbase.secret.key}")
+@Slf4j
+public class DefaultSecretPlugin implements ISecretPlugin {
     private String KEY;
 
-    @Value("${gbase.secret.iv}")
     private String IV;
 
-    public DefaultSecretProcessor() {
+    @Resource
+    private SpringUtils springUtils;
+
+    @PostConstruct
+    public void init() {
+        Environment env = springUtils.getBean(Environment.class);
+        String key = env.getProperty("application.secret.key");
+        String iv = env.getProperty("application.secret.iv");
+        if (StringUtils.isEmpty(key) || StringUtils.isEmpty(iv)) {
+            log.error(">>>>>> 项目没有配置加密私钥与随机iv值");
+            log.info(">>>>>> 配置方法: 在application.yml或application.property中配置${application.secret.key}与${application.secret.iv}");
+            throw new RuntimeException("缺少key iv 配置");
+        }
+
+        this.KEY = key;
+        this.IV = iv;
+        log.info(">>>>>> 配置KEY,IV成功");
+    }
+
+    public DefaultSecretPlugin() {
         Security.addProvider(new BouncyCastleProvider());
     }
-    public  String encrypt(String data) {
+
+    public String encrypt(String data) {
         return this.encrypt(data, KEY, IV);
     }
 
